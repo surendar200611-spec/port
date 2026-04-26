@@ -13,10 +13,10 @@ const Contact = () => {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      const response = await fetch('http://localhost:5001/api/leads', {
+      const response = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, source: 'Portfolio Website' })
+        body: JSON.stringify(formData)
       });
       if (response.ok) {
         setStatus('Message sent successfully!');
