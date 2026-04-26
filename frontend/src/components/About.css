@@ -75,9 +75,37 @@
 
 @media (max-width: 768px) {
   .about-content {
-    padding: 2.5rem;
+    padding: 2.5rem 1.5rem;
+    border-radius: 2rem;
   }
   .about-text h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .highlight-item {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    padding: 2rem 1rem;
+  }
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+  .highlight-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 1.5rem;
+  }
+  .highlight-item h4 {
+    font-size: 1.1rem;
   }
 }
