@@ -1,0 +1,36 @@
+.footer {
+  padding: 4rem 0;
+  border-top: 1px solid var(--glass-border);
+  background: var(--primary-bg);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -1px;
+}
+
+.footer-logo span {
+  color: var(--accent-red);
+}
+
+.footer-copyright {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+}
