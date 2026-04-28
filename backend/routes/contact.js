@@ -47,7 +47,9 @@ router.post('/', async (req, res) => {
       });
     }
 
+    console.log('Attempting to send email...');
     await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully!');
     res.status(200).json({ success: true, message: 'Message sent successfully!' });
   } catch (error) {
     console.error('Error sending email:', error);

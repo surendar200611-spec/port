@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
@@ -13,19 +14,16 @@ const Contact = () => {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      if (response.ok) {
-        setStatus('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setStatus('Failed to send message.');
-      }
+      await emailjs.send(
+        'service_j532geg',
+        'template_gcq8kw5',
+        formData,
+        '4svYYhSORRMAWTChI'
+      );
+      setStatus('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      console.error(error);
+      console.error('EmailJS error:', error);
       setStatus('Error sending message.');
     }
   };
